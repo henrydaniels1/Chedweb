@@ -90,7 +90,7 @@
   color-scheme: dark;
   --cobalt: #1B3A8C;
   --gold: #C9A84C;
-  --background: oklch(0.08 0 0);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.95 0 0);
   --card: oklch(0.12 0 0);
   --card-foreground: oklch(0.95 0 0);
@@ -128,7 +128,7 @@
     color-scheme: dark;
     --cobalt: #1B3A8C;
     --gold: #C9A84C;
-    --background: oklch(0.08 0 0);
+    --background: oklch(0 0 0);
     --foreground: oklch(0.95 0 0);
     --card: oklch(0.12 0 0);
     --card-foreground: oklch(0.95 0 0);

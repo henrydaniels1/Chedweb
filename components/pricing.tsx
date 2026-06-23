@@ -79,13 +79,13 @@ export function Pricing() {
               viewport={{ once: true }}
               className={`relative p-8 rounded-lg border transition-all duration-300 ${
                 plan.highlighted
-                  ? 'bg-gradient-to-br from-[#C9A84C]/10 to-[#1B3A8C]/10 border-[#C9A84C]/50 shadow-lg shadow-[#C9A84C]/10 lg:scale-[1.02]'
+                  ? 'bg-[#C9A84C]/10 border-[#C9A84C]/50 shadow-lg shadow-[#C9A84C]/10 lg:scale-[1.02]'
                   : 'bg-white/5 border-white/10 hover:border-white/20'
               }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#C9A84C] text-white text-xs font-semibold">
                     Most Popular
                   </span>
                 </div>
@@ -104,7 +104,7 @@ export function Pricing() {
                 rel="noopener noreferrer"
                 className={`w-full px-6 py-3 rounded-lg font-semibold mb-8 transition-all duration-200 text-center block ${
                   plan.highlighted
-                    ? 'bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white hover:shadow-lg hover:shadow-[#C9A84C]/30'
+                    ? 'bg-[#C9A84C] text-white hover:shadow-lg hover:shadow-[#C9A84C]/30'
                     : 'border border-[#C9A84C]/50 text-[#C9A84C] hover:bg-white/5'
                 }`}
               >

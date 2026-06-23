@@ -2,7 +2,7 @@ import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { Services } from '@/components/services'
 import { Portfolio } from '@/components/portfolio'
-import { About } from '@/components/about'
+// import { About } from '@/components/about'
 import { Testimonials } from '@/components/testimonials'
 import { Pricing } from '@/components/pricing'
 import { Contact } from '@/components/contact'
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      <About />
+      {/* <About /> */}
       <Testimonials />
       <Pricing />
       <Contact />

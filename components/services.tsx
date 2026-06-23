@@ -59,6 +59,29 @@ export function Services() {
 
   return (
     <section id="services" className="py-16 md:py-24 relative overflow-hidden bg-white/[0.02]">
+      {/* Network grid — deep space tech aesthetic */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        {/* Grid lines */}
+        {[0,1,2,3,4,5].map(i => (
+          <line key={`h${i}`} x1="0" y1={`${i * 20}%`} x2="100%" y2={`${i * 20}%`} stroke="#1B3A8C" strokeWidth="0.5" strokeOpacity="0.18" />
+        ))}
+        {[0,1,2,3,4,5,6,7].map(i => (
+          <line key={`v${i}`} x1={`${i * 14.5}%`} y1="0" x2={`${i * 14.5}%`} y2="100%" stroke="#1B3A8C" strokeWidth="0.5" strokeOpacity="0.18" />
+        ))}
+        {/* Connection lines */}
+        <line x1="14.5%" y1="20%" x2="29%" y2="40%" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.2" />
+        <line x1="29%" y1="40%" x2="58%" y2="20%" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.2" />
+        <line x1="58%" y1="20%" x2="72.5%" y2="60%" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.2" />
+        <line x1="72.5%" y1="60%" x2="87%" y2="40%" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.15" />
+        <line x1="14.5%" y1="80%" x2="43.5%" y2="60%" stroke="#1B3A8C" strokeWidth="0.5" strokeOpacity="0.25" />
+        <line x1="43.5%" y1="60%" x2="58%" y2="80%" stroke="#1B3A8C" strokeWidth="0.5" strokeOpacity="0.25" />
+        {/* Node dots */}
+        {[
+          [14.5,20],[29,40],[58,20],[72.5,60],[87,40],[14.5,80],[43.5,60],[58,80],[0,60],[100,20]
+        ].map(([cx,cy],i) => (
+          <circle key={i} cx={`${cx}%`} cy={`${cy}%`} r="2" fill="#C9A84C" fillOpacity="0.3" />
+        ))}
+      </svg>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

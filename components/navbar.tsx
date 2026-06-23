@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] bg-clip-text text-transparent">
+          <Link href="/" className="text-2xl font-bold text-[#C9A84C]">
             CHEDWEB
           </Link>
 
@@ -40,9 +40,12 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex gap-4">
-            <button className="px-6 py-2 rounded-lg bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white font-medium hover:shadow-lg hover:shadow-[#C9A84C]/25 transition-all duration-200">
+            <a
+              href="#contact"
+              className="px-6 py-2 rounded-lg bg-[#C9A84C] text-white font-medium hover:shadow-lg hover:shadow-[#C9A84C]/25 transition-all duration-200"
+            >
               Get Started
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,9 +78,13 @@ export function Navbar() {
                     {link.label}
                   </a>
                 ))}
-                <button className="w-full mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white font-medium text-sm">
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full mt-4 px-6 py-2 rounded-lg bg-[#C9A84C] text-white font-medium text-sm block text-center"
+                >
                   Get Started
-                </button>
+                </a>
               </div>
             </motion.div>
           )}

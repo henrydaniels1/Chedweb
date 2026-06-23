@@ -77,8 +77,19 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-16 md:py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 md:py-24 relative overflow-hidden">      
+      {/* Globe background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <iframe
+          src="/globe3.html"
+          className="absolute left-1/2 -translate-x-1/2 w-[200%] md:w-full h-full"
+          style={{ opacity: 0.4, border: 'none' }}
+          scrolling="no"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +179,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white font-semibold hover:shadow-lg hover:shadow-[#C9A84C]/30 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 rounded-lg bg-[#C9A84C] text-white font-semibold hover:shadow-lg hover:shadow-[#C9A84C]/30 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Sending...' : 'Send Message'}
             </button>

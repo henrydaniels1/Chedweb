@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'CHEDWEB - Premium Digital Solutions',
+  title: 'Chedweb - Premium Digital Solutions',
   description: 'Transform your vision into digital excellence. Premium agency services for brands that demand innovation.',
   generator: 'CHEDWEB',
   icons: {

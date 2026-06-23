@@ -79,10 +79,13 @@ export function Portfolio() {
                 <p className="text-[#C9A84C] text-sm font-semibold mb-2">{project.category}</p>
                 <h3 className="text-3xl font-bold mb-4 text-foreground">{project.title}</h3>
                 <p className="text-foreground/70 text-lg mb-6 leading-relaxed">{project.description}</p>
-                <button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-[#C9A84C]/50 text-[#C9A84C] font-semibold hover:bg-white/5 transition-all duration-200 group-hover:gap-3">
+                <a
+                  href="#contact"
+                  className="flex items-center gap-2 px-6 py-3 rounded-lg border border-[#C9A84C]/50 text-[#C9A84C] font-semibold hover:bg-white/5 transition-all duration-200 group-hover:gap-3 w-fit"
+                >
                   View Case Study
                   <ArrowRight size={18} />
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

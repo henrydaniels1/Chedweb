@@ -29,7 +29,16 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Gold arc curves — sparse luxury */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <path d="M-200 0 Q400 300 1000 0" fill="none" stroke="#C9A84C" strokeWidth="0.6" strokeOpacity="0.2" />
+        <path d="M-200 50 Q400 350 1000 50" fill="none" stroke="#C9A84C" strokeWidth="0.35" strokeOpacity="0.12" />
+        <path d="M200 900 Q700 600 1400 900" fill="none" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.18" />
+        <circle cx="15%" cy="12%" r="1.2" fill="#C9A84C" fillOpacity="0.35" />
+        <circle cx="85%" cy="88%" r="1.2" fill="#C9A84C" fillOpacity="0.3" />
+        <circle cx="50%" cy="5%" r="1" fill="#C9A84C" fillOpacity="0.25" />
+      </svg>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

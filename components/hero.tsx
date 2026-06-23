@@ -19,7 +19,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: 'easeOut' as const },
     },
   }
 
@@ -32,6 +32,18 @@ export function Hero() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(27,58,140,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(27,58,140,0.04)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
+
+      {/* Gold Line Art — luxury abstract curves */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <path d="M-100 400 Q200 100 500 350 T1100 200" fill="none" stroke="#C9A84C" strokeWidth="0.6" strokeOpacity="0.25" />
+        <path d="M-50 600 Q300 250 650 500 T1300 300" fill="none" stroke="#C9A84C" strokeWidth="0.4" strokeOpacity="0.18" />
+        <path d="M800 -50 Q1000 300 750 550 T900 900" fill="none" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.2" />
+        <path d="M0 800 Q400 500 700 700 T1400 500" fill="none" stroke="#C9A84C" strokeWidth="0.35" strokeOpacity="0.15" />
+        <circle cx="480" cy="180" r="1.5" fill="#C9A84C" fillOpacity="0.4" />
+        <circle cx="820" cy="320" r="1" fill="#C9A84C" fillOpacity="0.35" />
+        <circle cx="200" cy="600" r="1.2" fill="#C9A84C" fillOpacity="0.3" />
+        <circle cx="1100" cy="150" r="1" fill="#C9A84C" fillOpacity="0.3" />
+      </svg>
 
       <motion.div
         variants={containerVariants}
@@ -67,9 +79,12 @@ export function Hero() {
           >
             Start Your Project
           </a>
-          <button className="px-8 py-4 rounded-lg border border-[#C9A84C]/50 text-foreground font-semibold hover:bg-white/5 transition-all duration-200">
+          <a
+            href="#portfolio"
+            className="px-8 py-4 rounded-lg border border-[#C9A84C]/50 text-foreground font-semibold hover:bg-white/5 transition-all duration-200"
+          >
             View Our Work
-          </button>
+          </a>
         </motion.div>
 
         {/* Stats Section */}

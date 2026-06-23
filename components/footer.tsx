@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Share2 } from 'lucide-react'
+import { Mail, MessageCircle } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,21 +9,36 @@ export function Footer() {
   const links = [
     {
       section: 'Services',
-      items: ['Web Development', 'UI/UX Design', 'Strategy', 'Mobile Apps'],
+      items: [
+        { label: 'Web Development', href: '#services' },
+        { label: 'UI/UX Design', href: '#services' },
+        { label: 'Strategy', href: '#services' },
+        { label: 'Mobile Apps', href: '#services' },
+      ],
     },
     {
       section: 'Company',
-      items: ['About', 'Blog', 'Careers', 'Contact'],
+      items: [
+        { label: 'About', href: '#about' },
+        { label: 'Portfolio', href: '#portfolio' },
+        { label: 'Pricing', href: '#pricing' },
+        { label: 'Contact', href: '#contact' },
+      ],
     },
     {
       section: 'Legal',
-      items: ['Privacy', 'Terms', 'Cookies', 'License'],
+      items: [
+        { label: 'Privacy', href: '#' },
+        { label: 'Terms', href: '#' },
+        { label: 'Cookies', href: '#' },
+        { label: 'License', href: '#' },
+      ],
     },
   ]
 
   const socials = [
     { icon: Mail, href: 'mailto:henrydanielchibuzor@gmail.com', label: 'Email' },
-    { icon: Share2, href: '#', label: 'Social' },
+    { icon: MessageCircle, href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`, label: 'WhatsApp' },
   ]
 
   return (
@@ -33,7 +48,7 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] bg-clip-text text-transparent mb-4 block">
+            <Link href="/" className="text-2xl font-bold text-[#C9A84C] mb-4 block">
               CHEDWEB
             </Link>
             <p className="text-foreground/70 text-sm">
@@ -49,10 +64,10 @@ export function Footer() {
                 {section.items.map((item, itemIndex) => (
                   <li key={itemIndex}>
                     <a
-                      href="#"
+                      href={item.href}
                       className="text-foreground/70 text-sm hover:text-foreground transition-colors"
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -84,7 +99,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-foreground/70 gap-4">
             <p>&copy; {currentYear} CHEDWEB. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-foreground transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="hover:text-foreground transition-colors">
