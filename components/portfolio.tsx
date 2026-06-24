@@ -13,18 +13,18 @@ const projects = [
     iconColor: 'text-purple-400',
   },
   {
-    title: 'Mobile Banking App',
-    category: 'Mobile Development',
-    description: 'Secure, intuitive banking application with AI-powered financial insights.',
-    image: 'bg-gradient-to-br from-blue-500/20 to-cyan-500/20',
-    icon: Smartphone,
-    iconColor: 'text-cyan-400',
-  },
+  title: 'Blockchain Innovation Hub',
+  category: 'Web Development',
+  description: 'A community-driven platform for learning blockchain product development and building startups in Nigeria — featuring educational resources, program listings, and a vibrant ecosystem connecting aspiring blockchain founders.',
+  image: 'bih.png',
+  icon: ShoppingCart, // or `Layers` / `Cpu` for a blockchain/tech feel
+  iconColor: 'text-violet-400',
+},
   {
-    title: 'SaaS Dashboard',
-    category: 'UI/UX Design',
-    description: 'Complex analytics dashboard with real-time data visualization.',
-    image: 'bg-gradient-to-br from-emerald-500/20 to-teal-500/20',
+    title: 'Neobank Mobile App',
+    category: 'Mobile Development',
+    description: 'A clean, modern mobile banking app UI featuring account overview, card management, seamless fund transfers, and a fully structured user profile — designed for clarity and effortless financial control.',
+    image: 'mobile.png',
     icon: LayoutDashboard,
     iconColor: 'text-emerald-400',
   },
@@ -58,20 +58,27 @@ export function Portfolio() {
               className="group grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             >
               {/* Image */}
-              <div className={`relative h-80 rounded-lg ${project.image} border border-white/10 overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <motion.div
-                  initial={{ scale: 0.95, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <div className="text-center">
-                    <project.icon className={`w-16 h-16 ${project.iconColor} mx-auto mb-3 opacity-60`} />
-                    <p className="text-foreground/50 text-sm font-medium">{project.category}</p>
-                  </div>
-                </motion.div>
+              <div className="relative h-80 rounded-lg border border-white/10 overflow-hidden">
+                {project.image.endsWith('.png') || project.image.endsWith('.jpg') || project.image.endsWith('.webp') ? (
+                  <img src={project.image} alt={project.title} className="w-full h-full object-contain object-center" />
+                ) : (
+                  <>
+                    <div className={`absolute inset-0 ${project.image}`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <motion.div
+                      initial={{ scale: 0.95, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div className="text-center">
+                        <project.icon className={`w-16 h-16 ${project.iconColor} mx-auto mb-3 opacity-60`} />
+                        <p className="text-foreground/50 text-sm font-medium">{project.category}</p>
+                      </div>
+                    </motion.div>
+                  </>
+                )}
               </div>
 
               {/* Content */}
