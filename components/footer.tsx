@@ -51,10 +51,10 @@ export function Footer() {
         {/* Main Footer */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
-          <div>
-            <Link href="/" className="text-2xl font-bold text-[#C9A84C] mb-4 block">
-              CHEDWEB
-            </Link>
+          <div className='space-y-4'>
+            <div  className="h-6 w-30 ">
+              <img src="logo4.png" alt="h-full w-full " />
+            </div>
             <p className="text-foreground/70 text-sm">
               Transform your vision into digital excellence. Premium solutions for brands that demand innovation.
             </p>

@@ -5,49 +5,67 @@ import { Check } from 'lucide-react'
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$2,999',
-    description: 'Perfect for small projects and startups',
+    name: 'Landing Page',
+    price: '₦100,000',
+    period: 'One-Time',
+    description: 'One Page Website',
     features: [
-      'Up to 5 pages',
-      'Mobile responsive design',
-      'Basic SEO optimization',
-      '2 rounds of revisions',
-      'Deployment included',
-      'Email support',
+      '1 Custom Landing Page',
+      'Responsive Design',
+      'Basic SEO Setup',
+      'Contact Form',
+      'Social Media Links',
+      'SSL Security Setup',
+      '2 Revisions',
+      'Delivery in 3–5 Days',
     ],
+    tag: null,
+    footer: 'Perfect for: Small businesses, freelancers, events, and personal brands.',
     highlighted: false,
   },
   {
-    name: 'Professional',
-    price: '$8,999',
-    description: 'Ideal for growing businesses',
+    name: 'Deluxe Package',
+    price: '₦250,000',
+    period: 'One-Time',
+    description: 'Professional business website.',
     features: [
-      'Unlimited pages',
-      'Advanced animations',
-      'Full SEO strategy',
-      'Unlimited revisions',
-      'Performance optimization',
-      'Priority support',
-      'Analytics integration',
-      '3 months support included',
+      'Up to 5 Website Pages',
+      'Blog Setup',
+      'Responsive Design',
+      'Contact Form',
+      'WhatsApp Integration',
+      'Social Media Integration',
+      'Basic SEO Setup',
+      'Speed Optimization',
+      'SSL Security Setup',
+      '3 Revisions',
+      'Delivery in 10 Days',
     ],
+    tag: 'Most Popular',
+    footer: 'Perfect for: Growing businesses and startups.',
     highlighted: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'For large-scale projects',
+    name: 'Custom Website',
+    price: '₦350,000',
+    period: 'upwards',
+    description: 'Fully Coded custom website',
     features: [
-      'Everything in Professional',
-      'Custom development',
-      'Advanced integrations',
-      'Dedicated account manager',
-      'Training & documentation',
-      'Post-launch support',
-      'Marketing consultation',
-      '12 months support included',
+      'Everything in Deluxe',
+      'Unlimited Pages',
+      'Coded From Scratch',
+      'Booking (optional)',
+      'E-commerce (optional)',
+      'Payment Gateway',
+      'User Account',
+      'API Integrations',
+      'Security Hardening',
+      'Priority Support',
+      'Advanced SEO Setup',
+      '3 Revisions',
     ],
+    tag: null,
+    footer: null,
     highlighted: false,
   },
 ]
@@ -83,23 +101,23 @@ export function Pricing() {
                   : 'bg-white/5 border-white/10 hover:border-white/20'
               }`}
             >
-              {plan.highlighted && (
+              {plan.tag && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="px-3 py-1 rounded-full bg-[#C9A84C] text-white text-xs font-semibold">
-                    Most Popular
+                    {plan.tag}
                   </span>
                 </div>
               )}
 
               <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
               <p className="text-foreground/70 text-sm mb-4">{plan.description}</p>
-              <p className="text-4xl font-bold mb-6">
+              <p className="text-4xl font-bold mb-1">
                 <span className="text-foreground">{plan.price}</span>
-                {plan.price !== 'Custom' && <span className="text-lg text-foreground/60">/project</span>}
               </p>
+              <p className="text-sm text-foreground/60 mb-6">{plan.period}</p>
 
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello CHEDWEB, I would like to purchase the ${plan.name} (${plan.price}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full px-6 py-3 rounded-lg font-semibold mb-8 transition-all duration-200 text-center block ${
@@ -108,7 +126,7 @@ export function Pricing() {
                     : 'border border-[#C9A84C]/50 text-[#C9A84C] hover:bg-white/5'
                 }`}
               >
-                {plan.price === 'Custom' ? 'Contact Us' : 'Get Started'}
+                Request This Package
               </a>
 
               <div className="space-y-4">
@@ -119,6 +137,9 @@ export function Pricing() {
                   </div>
                 ))}
               </div>
+              {plan.footer && (
+                <p className="text-foreground/50 text-xs mt-6 italic">{plan.footer}</p>
+              )}
             </motion.div>
           ))}
         </div>
