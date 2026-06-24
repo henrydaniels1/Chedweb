@@ -72,7 +72,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Nigeria',
+      value: 'Lagos, Nigeria',
     },
   ]
 

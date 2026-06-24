@@ -75,7 +75,7 @@ export function Hero() {
             href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-lg bg-gradient-to-r from-[#C9A84C] to-[#1B3A8C] text-white font-semibold hover:shadow-lg hover:shadow-[#C9A84C]/30 transition-all duration-300 transform hover:scale-105"
+            className="px-8 py-4 rounded-lg bg-[#C9A84C]  text-white font-semibold hover:shadow-lg hover:shadow-[#C9A84C]/30 transition-all duration-300 transform hover:scale-105"
           >
             Start Your Project
           </a>

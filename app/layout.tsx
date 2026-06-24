@@ -14,21 +14,8 @@ export const metadata: Metadata = {
   description: 'Transform your vision into digital excellence. Premium agency services for brands that demand innovation.',
   generator: 'CHEDWEB',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/logo5.png',
+    apple: '/logo5.png',
   },
 }
 

@@ -18,11 +18,11 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-[#C9A84C]">
-            CHEDWEB
+          <Link href="/" className="w-30">
+            <img src="logo4.png" alt="" className='w-full h-full lg:scale-160 md:scale-140 scale-105'/>
           </Link>
 
           {/* Desktop Navigation */}
@@ -89,6 +89,7 @@ export function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
+
       </div>
     </nav>
   )

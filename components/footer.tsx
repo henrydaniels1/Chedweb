@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Mail, MessageCircle } from 'lucide-react'
+import { FaXTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -19,26 +20,29 @@ export function Footer() {
     {
       section: 'Company',
       items: [
-        { label: 'About', href: '#about' },
+        // { label: 'About', href: '#about' },
         { label: 'Portfolio', href: '#portfolio' },
         { label: 'Pricing', href: '#pricing' },
         { label: 'Contact', href: '#contact' },
       ],
     },
-    {
-      section: 'Legal',
-      items: [
-        { label: 'Privacy', href: '#' },
-        { label: 'Terms', href: '#' },
-        { label: 'Cookies', href: '#' },
-        { label: 'License', href: '#' },
-      ],
-    },
+    // {
+    //   section: 'Legal',
+    //   items: [
+    //     { label: 'Privacy', href: '#' },
+    //     { label: 'Terms', href: '#' },
+    //     { label: 'Cookies', href: '#' },
+    //     { label: 'License', href: '#' },
+    //   ],
+    // },
   ]
 
   const socials = [
-    { icon: Mail, href: 'mailto:henrydanielchibuzor@gmail.com', label: 'Email' },
+    { icon: Mail, href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`, label: 'Email' },
     { icon: MessageCircle, href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`, label: 'WhatsApp' },
+    { icon: FaXTwitter, href: process.env.NEXT_PUBLIC_X_URL!, label: 'X' },
+    { icon: FaInstagram, href: process.env.NEXT_PUBLIC_INSTAGRAM_URL!, label: 'Instagram' },
+    { icon: FaLinkedinIn, href: process.env.NEXT_PUBLIC_LINKEDIN_URL!, label: 'LinkedIn' },
   ]
 
   return (
@@ -77,7 +81,7 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 py-8">
+        <div className="border-t border-white/10 py-8 ">
           {/* Social Links */}
           <div className="flex gap-4 mb-6">
             {socials.map((social, index) => {
@@ -87,6 +91,8 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white/5 border border-white/10 text-foreground/70 hover:text-foreground hover:border-[#C9A84C]/30 transition-all duration-200"
                 >
                   <Icon size={18} />
@@ -98,14 +104,14 @@ export function Footer() {
           {/* Bottom */}
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-foreground/70 gap-4">
             <p>&copy; {currentYear} CHEDWEB. All rights reserved.</p>
-            <div className="flex gap-6">
+            {/* <div className="flex gap-6">
                 <a href="#" className="hover:text-foreground transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="hover:text-foreground transition-colors">
                 Terms of Service
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
